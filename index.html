@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Showcase Hub</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <i class="fas fa-code-branch"></i>
+                <span>ProjectHub</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#home" class="nav-link">Home</a></li>
+                <li><a href="#upload" class="nav-link">Upload</a></li>
+                <li><a href="#gallery" class="nav-link">Gallery</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <h1 class="hero-title">Share Your Amazing Projects</h1>
+                <p class="hero-description">Upload, showcase, and share your coding projects with the world. Support for Jupyter notebooks, code files, and more.</p>
+                <div class="hero-buttons">
+                    <a href="#upload" class="btn btn-primary">Upload Project</a>
+                    <a href="#gallery" class="btn btn-secondary">View Gallery</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <div class="floating-elements">
+                    <div class="floating-card">
+                        <i class="fab fa-python"></i>
+                        <span>Python</span>
+                    </div>
+                    <div class="floating-card">
+                        <i class="fab fa-js-square"></i>
+                        <span>JavaScript</span>
+                    </div>
+                    <div class="floating-card">
+                        <i class="fas fa-chart-line"></i>
+                        <span>Data Science</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Upload Section -->
+    <section id="upload" class="upload-section">
+        <div class="container">
+            <h2 class="section-title">Upload Your Project</h2>
+            <p class="section-description">Drag and drop your files or click to browse</p>
+            
+            <div class="upload-container">
+                <div class="upload-area" id="uploadArea">
+                    <div class="upload-content">
+                        <i class="fas fa-cloud-upload-alt upload-icon"></i>
+                        <h3>Drop files here or click to upload</h3>
+                        <p>Supports: .ipynb, .py, .js, .html, .css, .md, .zip</p>
+                        <input type="file" id="fileInput" multiple accept=".ipynb,.py,.js,.html,.css,.md,.zip,.json,.txt">
+                    </div>
+                </div>
+                
+                <div class="project-form">
+                    <div class="form-group">
+                        <label for="projectTitle">Project Title</label>
+                        <input type="text" id="projectTitle" placeholder="Enter project title">
+                    </div>
+                    <div class="form-group">
+                        <label for="projectDescription">Description</label>
+                        <textarea id="projectDescription" placeholder="Describe your project"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="projectTags">Tags</label>
+                        <input type="text" id="projectTags" placeholder="python, machine-learning, data-science">
+                    </div>
+                    <button class="btn btn-primary btn-upload" id="uploadBtn">
+                        <i class="fas fa-upload"></i>
+                        Upload Project
+                    </button>
+                </div>
+            </div>
+            
+            <div class="upload-progress" id="uploadProgress" style="display: none;">
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progressFill"></div>
+                </div>
+                <p class="progress-text" id="progressText">Uploading...</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="gallery-section">
+        <div class="container">
+            <h2 class="section-title">Project Gallery</h2>
+            <p class="section-description">Explore amazing projects from the community</p>
+            
+            <div class="filter-tabs">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="python">Python</button>
+                <button class="filter-btn" data-filter="javascript">JavaScript</button>
+                <button class="filter-btn" data-filter="data-science">Data Science</button>
+                <button class="filter-btn" data-filter="web-dev">Web Dev</button>
+            </div>
+            
+            <div class="projects-grid" id="projectsGrid">
+                <!-- Sample project cards will be populated by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about-section">
+        <div class="container">
+            <div class="about-content">
+                <h2 class="section-title">About ProjectHub</h2>
+                <p>ProjectHub is a modern platform for developers to showcase their work, share code, and connect with the community. Whether you're working on machine learning models, web applications, or data analysis projects, our platform makes it easy to share your work with the world.</p>
+                
+                <div class="features">
+                    <div class="feature">
+                        <i class="fas fa-rocket"></i>
+                        <h3>Easy Upload</h3>
+                        <p>Drag and drop interface for quick project uploads</p>
+                    </div>
+                    <div class="feature">
+                        <i class="fas fa-eye"></i>
+                        <h3>Beautiful Preview</h3>
+                        <p>Automatic preview generation for Jupyter notebooks and code</p>
+                    </div>
+                    <div class="feature">
+                        <i class="fas fa-share"></i>
+                        <h3>Easy Sharing</h3>
+                        <p>Share your projects with direct links and social media</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <i class="fas fa-code-branch"></i>
+                    <span>ProjectHub</span>
+                </div>
+                <p>&copy; 2024 ProjectHub. Made with ❤️ for developers.</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-github"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Project Modal -->
+    <div class="modal" id="projectModal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div class="modal-header">
+                <h2 id="modalTitle">Project Title</h2>
+                <div class="modal-actions">
+                    <button class="btn btn-secondary" id="downloadBtn">
+                        <i class="fas fa-download"></i>
+                        Download
+                    </button>
+                    <button class="btn btn-primary" id="shareBtn">
+                        <i class="fas fa-share"></i>
+                        Share
+                    </button>
+                </div>
+            </div>
+            <div class="modal-body">
+                <div class="project-preview" id="projectPreview">
+                    <!-- Project content will be loaded here -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
